@@ -37,6 +37,8 @@ $(document).ready(function(){
 		var sizeR = getRandomArbitrary(10, 40);
 		var endLeft = getRandomArbitrary(startLeft - 100, startLeft + 100);
 		var snow = document.createElement('span');
+    var snow1 = document.createElement('img');
+    snow1.setAttribute('src','./public/images/men7.jpg')
 
 		$(snow).addClass('snow-item fa fa-heart').css({
 			'position'  : 'absolute',
@@ -58,9 +60,35 @@ $(document).ready(function(){
 			complete:function(){
 				$(this).fadeOut('fast',function(){
 					$(this).remove();
-				});
+        });
+        $(snow1).addClass('snow-item').css({
+          'position'  : 'absolute',
+          'z-index'   : 'auto',
+          'color'     : '#ff0000',
+          'display'   : 'block',
+          'top'       : 0,
+          'left'      : startLeft,
+          'opacity'   : opacityR,
+          'font-size' : sizeR+'px',
+          'width':sizeR+'px',
+          'height':sizeR+'px',
+          'border-radius':'50%'
+        })
+        .appendTo('body')
+        .animate({
+          'top'       : screenHeight-sizeR,
+          'left'      : endLeft
+        },{
+          duration : timeRun,
+          easing : 'linear',
+          complete:function(){
+            $(this).fadeOut('fast',function(){
+              $(this).remove();
+            });
+          }
+        });
 			}
-		});
+    });
 	},500);
 });
 
@@ -71,7 +99,7 @@ setTimeout(init, 100);
 
 var obox = document.getElementById('drag-container');
 var ospin = document.getElementById('spin-container');
-var aImg = ospin.getElementsByTagName('img');
+var aImg = ospin.getElementsByClassName('img');
 var aVid = ospin.getElementsByTagName('video');
 var aEle = [...aImg, ...aVid]; // gộp 2 mảng lại
 
