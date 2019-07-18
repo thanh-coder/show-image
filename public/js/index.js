@@ -28,6 +28,7 @@ function getRandomArbitrary(min, max){
 }
 
 $(document).ready(function(){
+
 	setInterval(function(){
 		var screenHeight = $(document).height();
 		var screenWidth = $(document).width();
@@ -89,7 +90,31 @@ $(document).ready(function(){
         });
 			}
     });
-	},500);
+  },500);
+  
+$('.bird').click(function(){
+  $('.typewrite').css('display','block')
+  $('#drag-container').hide();
+  $('.header').hide();
+  var content = $('.typewrite').html();
+  //find the length of the content
+  var contentLength = content.length;
+  var char = 0;
+  $('.typewrite').html('<span class="typing-cursor">|</span>');
+  //Here is the function
+  (function typeFunc() { 
+   //dynamic delay to get the typewriting feel
+      var typingSpeed = Math.round(Math.random() * 120) + 60;
+      setTimeout(function() {
+          char++;
+          var type = content.substring(0, char);
+    $('.typewrite').html('<span style="color:green">'+type+'</span>' + '<span class="typing-cursor">|</span>');
+    //recursive
+          typeFunc();
+      }, typingSpeed);
+  }());
+})
+ 
 });
 
 

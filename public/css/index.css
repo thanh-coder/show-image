@@ -42,6 +42,22 @@
     box-shadow: 0 0 15px #fffd;
     -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
   }
+
+/* .typewrite{ font-size: 20px;position: relative; display: inline-block; width:200px; text-indent: -999em;} */
+.typewrite{ font-size: 30px;position: fixed;    
+  font-family: 'Dancing Script', cursive;
+  left: 200px;
+  top:10px;
+}
+.typing-cursor{ 
+   display: inline-block;
+    width: 8px; 
+    text-indent: -999em;
+     background: #ccc;
+  color: green !important;
+}
+
+
   @media all and (max-width: 320px) {
     #drag-container img, #drag-container video {
       transform-style: preserve-3d;
