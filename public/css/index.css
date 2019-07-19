@@ -44,9 +44,9 @@
   }
 
 /* .typewrite{ font-size: 20px;position: relative; display: inline-block; width:200px; text-indent: -999em;} */
-.typewrite{ font-size: 30px;position: fixed;    
+.typewrite{ font-size: 35px;position: fixed;    
   font-family: 'Dancing Script', cursive;
-  left: 200px;
+  left: 240px;
   top:10px;
 }
 .typing-cursor{ 
