@@ -39,7 +39,7 @@ $(document).ready(function(){
 		var endLeft = getRandomArbitrary(startLeft - 100, startLeft + 100);
 		var snow = document.createElement('span');
     var snow1 = document.createElement('img');
-    snow1.setAttribute('src','./public/images/men7.jpg')
+    snow1.setAttribute('src','./public/images/h.jpg')
 
 		$(snow).addClass('snow-item fa fa-heart').css({
 			'position'  : 'absolute',
